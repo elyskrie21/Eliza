@@ -1,3 +1,4 @@
+#This the code for the machine learning model that is built form tensorflow and the higher level api tftlearn because I am not very good a machine learning yet
 import json
 import random
 import tensorflow
