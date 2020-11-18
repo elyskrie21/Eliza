@@ -1,2 +1,2 @@
-model_checkpoint_path: "/home/elyse/Desktop/Computer_Science/Eliza/model.tflearn"
-all_model_checkpoint_paths: "/home/elyse/Desktop/Computer_Science/Eliza/model.tflearn"
+model_checkpoint_path: "/home/runner/Eliza/model.tflearn"
+all_model_checkpoint_paths: "/home/runner/Eliza/model.tflearn"

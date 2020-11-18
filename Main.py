@@ -35,8 +35,6 @@ def main():
         for tg in data['intents']:
             if tg['tag'] == tag:
                 responses = tg['responses']
-                print(tg['tag'])
-                print(responses)
         
         print(random.choice(responses))
 
