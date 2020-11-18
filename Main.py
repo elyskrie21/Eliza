@@ -6,36 +6,36 @@ stemmer = LancasterStemmer()
 
 from TrainModel import TrainModel 
 
-def bagOfWords(s, words):
-    bag = [0 for i in range(len(words))]
-    sWords = [stemmer.stem(word.lower()) for word in nltk.word_tokenize(s)]
-
-    for se in sWords:
-        for i, w in enumerate(words):
-            if w == se: 
+def bagOfWords(userInput, allWords):
+    bag = [0 for i in range(len(allWords))]
+    userInputWords = [stemmer.stem(word.lower()) for word in nltk.word_tokenize(userInput)]
+    print(f'This is sWords: {userInputWords}')
+    for word in userInputWords:
+        for i, w in enumerate(allWords):
+            if w == word: 
                 bag[i] = 1 
-    
+    print(f'This is the numpy array: {numpy.array(bag)}')
     return numpy.array(bag)
 
 def main():
-    model, words, labels, data = TrainModel()
+    model, allWords, labels, data = TrainModel()
     print("Welcome to the tech shop! My name is Eliza! Starting asking questions to talk to me (type quit to stop)!")
     name = input("What is your name? ")
-    print(f'Hello {name}, Nice to meet you! How can I help you today?')
+    print(f'Eliza: Hello {name}, Nice to meet you! How can I help you today?')
   
     while True:
         userInput = input(f'{name}: ')
         if userInput.lower() == 'quit':
             break 
 
-        results = model.predict([bagOfWords(userInput, words)])
+        results = model.predict([bagOfWords(userInput, allWords)])
         resultsIndex = numpy.argmax(results)
         tag = labels[resultsIndex]
-
+       
         for tg in data['intents']:
             if tg['tag'] == tag:
                 responses = tg['responses']
         
-        print(random.choice(responses))
+        print('Eliza: ', random.choice(responses))
 
 main()

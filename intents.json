@@ -1,118 +1,121 @@
 {
-    "intents": [
-        {
-            "tag": "Hello",
-            "patterns": [
-                "Hi",
-                "How are you?",
-                "Hello",
-                "Anyone there?"
-            ],
-            "responses": [
-                "Hello, nice to meet you",
-                "Hi, how can I help you?",
-                "Hello, thanks for visiting"
-            ],
-            "context_set": ""
-        },
-        {
-            "tag": "Goodbye",
-            "patterns": [
-                "Bye",
-                "See you later",
-                "Goodbye"
-            ],
-            "responses": [
-                "See you later, thanks for chat",
-                "Have a nice day",
-                "Goodbye, hope to see you soon"
-            ]
-        },
-        {
-            "tag": "thanks",
-            "patterns": [
-                "Thanks",
-                "Thank you",
-                "That was helpful"
-            ],
-            "responses": [
-                "No problem, happy to help!",
-                "Any time!",
-                "My pleasure!"
-            ]
-        },
-        {
-            "tag": "cpu",
-            "patterns": [
-                "What kinds of cpus do you sell?",
-                "What is the best cpu?",
-                "What cpu should I get?"
-            ],
-            "responses": [
-                "We sell both AMD and Intel cpus. They both have their own benefits",
-                "AMD cpus are good for gaming at a cheap price and Intel cpus are good for productivity"
-            ]
-        },
-        {
-            "tag": "gpu",
-            "patterns": [
-                "What kinds of gpus do you sell?",
-                "What is the most powerful gpu",
-                "What gpu should i get"
-            ],
-            "responses": [
-                "We sell both AMD and Nividia graphis cards. Both are great options with powerful features",
-                "We have the newest and most powerful AMD and Nividia graphics cards, both with amazing features"
-            ]
-        },
-        {
-            "tag": "motherboard",
-            "patterns": [
-                "What kinds of motherboards do you sell?",
-                "What are the most common motherboards?",
-                "What motherboard should I buy?",
-                "How about motherboards?"
-            ],
-            "responses": [
-                "We have motherboards from many different vendors, each has their own benefits. They typical motherboard sizes are ATX or micro-ATX",
-                "We have many types of motherboards in all sizes from ATX, micro-Atx, and mini-ITX. Each motherboard has its own special features"
-            ]
-        },
-        {
-            "tag": "hours",
-            "patterns": [
-                "What hours are you open?",
-                "What are your hours?",
-                "When are you open?"
-            ],
-            "responses": [
-                "We're open every day 9am-9pm",
-                "Our hours are 9am-9pm every day"
-            ]
-        },
-        {
-            "tag": "payments",
-            "patterns": [
-                "Do you take credit cards?",
-                "Do you accept Mastercard?",
-                "Are you cash only?"
-            ],
-            "responses": [
-                "We accept VISA, Mastercard and AMEX",
-                "We accept most major credit cards"
-            ]
-        },
-        {
-            "tag": "opentoday",
-            "patterns": [
-                "Are you open today?",
-                "When do you open today?",
-                "What are your hours today?"
-            ],
-            "responses": [
-                "We're open every day from 9am-9pm",
-                "Our hours are 9am-9pm every day"
-            ]
-        }
-    ]
+  "intents": [
+    {
+      "tag": "Hello",
+      "patterns": [
+        "Hi",
+        "How are you?",
+        "Hello",
+        "Anyone there?"
+      ],
+      "responses": [
+        "Hello, nice to meet you",
+        "Hi, how can I help you?",
+        "Hello, thanks for visiting"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Goodbye",
+      "patterns": [
+        "Bye",
+        "See you later",
+        "Goodbye"
+      ],
+      "responses": [
+        "See you later, thanks for chat",
+        "Have a nice day",
+        "Goodbye, hope to see you soon"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "That was helpful"
+      ],
+      "responses": [
+        "No problem, happy to help!",
+        "Any time!",
+        "My pleasure!"
+      ]
+    },
+    {
+      "tag": "cpu",
+      "patterns": [
+        "I want a cpu",
+        "Whats the most usefule processor", 
+        "What kinds of cpus do you sell?",
+        "What is the best cpu?",
+        "What cpu should I get?"
+      ],
+      "responses": [
+        "We sell both AMD and Intel cpus. They both have their own benefits",
+        "AMD cpus are good for gaming at a cheap price and Intel cpus are good for productivity"
+      ]
+    },
+    {
+      "tag": "gpu",
+      "patterns": [
+        "I need a gpu", 
+        "What kinds of gpus do you sell?",
+        "What is the most powerful graphics card",
+        "What gpu should i get"
+      ],
+      "responses": [
+        "We sell both AMD and Nividia graphis cards. Both are great options with powerful features",
+        "We have the newest and most powerful AMD and Nividia graphics cards, both with amazing features"
+      ]
+    },
+    {
+      "tag": "motherboard",
+      "patterns": [
+        "What kinds of motherboards do you sell?",
+        "What are the most common motherboards?",
+        "What motherboard should I buy?",
+        "How about motherboards?"
+      ],
+      "responses": [
+        "We have motherboards from many different vendors, each has their own benefits. They typical motherboard sizes are ATX or micro-ATX",
+        "We have many types of motherboards in all sizes from ATX, micro-Atx, and mini-ITX. Each motherboard has its own special features"
+      ]
+    },
+    {
+      "tag": "hours",
+      "patterns": [
+        "What hours are you open?",
+        "What are your hours?",
+        "When are you open?"
+      ],
+      "responses": [
+        "We're open every day 9am-9pm",
+        "Our hours are 9am-9pm every day"
+      ]
+    },
+    {
+      "tag": "payments",
+      "patterns": [
+        "Do you take credit cards?",
+        "Do you accept Mastercard?",
+        "Are you cash only?"
+      ],
+      "responses": [
+        "We accept VISA, Mastercard and AMEX",
+        "We accept most major credit cards"
+      ]
+    },
+    {
+      "tag": "opentoday",
+      "patterns": [
+        "Are you open today?",
+        "When do you open today?",
+        "What are your hours today?"
+      ],
+      "responses": [
+        "We're open every day from 9am-9pm",
+        "Our hours are 9am-9pm every day"
+      ]
+    }
+  ]
 }
