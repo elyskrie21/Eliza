@@ -52,17 +52,17 @@ def TrainModel():
     allWords = sorted(list(set(allWords)))
 
     #These two list are going to be used to train our model 
-    #The training list is all the data the model is goining to use for its predictions
+    #The training list is all the data the model is going to use for its predictions
     #The output list will get the tag that the model should predict for each pattern 
     training = []
     output = []
 
-    #A list of 0 the spans the lenght of the tags list which will be used during our Bag of Words process 
+    #A list of 0 the spans the length of the tags list which will be used during our Bag of Words process 
     outEmpty = [0 for i in range(len(tags))]
 
-    #This for loop is going throught Bag of Words process because a model needs to trained using numbers and not strings
+    #This for loop is runnnig the Bag of Words process because a model needs to trained using numbers and not strings
     for index, pattern in enumerate(allPatterns):
-        #This bag list will become the length of pattern and will be made up of 0s and 1s
+        #This bag list will become the length of allWords and will be made up of 0s and 1s
         #If a word in the pattern is in allWords then a 1 is appended, else a 0 is appened 
         bag = []
 
@@ -85,13 +85,18 @@ def TrainModel():
     #Setting up tensorflow and the neural networks
     tensorflow.compat.v1.reset_default_graph()
 
+    #Brings the data into the system for processing 
     net = tflearn.input_data(shape=[None, len(training[0])])
+    #Creates 3 more layers each with 8 "neurons"
     net = tflearn.fully_connected(net, 8)
     net = tflearn.fully_connected(net, 8)
+    net = tflearn.fully_connected(net, 8)
+    #This creates the output layer after data is processed by the previous layers 
     net = tflearn.fully_connected(net, len(output[0]), activation='softmax')
+    #This uses regressions to predict the tag "or the numerical value of the tag" by using previous data 
     net = tflearn.regression(net)
 
-    # This now trains the model and saves the model to a file
+    # This now trains the model using DNN "Deep Neural Network" and saves the model to a file
     model = tflearn.DNN(net)
     model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
     model.save('model.tflearn')

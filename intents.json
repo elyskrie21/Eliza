@@ -98,7 +98,8 @@
       "patterns": [
         "Do you take credit cards?",
         "Do you accept Mastercard?",
-        "Are you cash only?"
+        "Are you cash only?",
+        "What kind of payment do you take?"
       ],
       "responses": [
         "We accept VISA, Mastercard and AMEX",
