@@ -1,4 +1,4 @@
-#This the code for the machine learning model that is built form tensorflow and the higher level api tftlearn because I am not very good a machine learning yet
+#This the code for the machine learning model that is built form tensorflow and the higher level api tftlearn because I am not very good a machine learning yet. Also, pardon my grammar. 
 
 #For this to work properly and to see the model being trained, you need to use pip to install tensorflow, tflearn, and nltk
 import json
@@ -8,6 +8,7 @@ import tflearn
 import numpy
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
+import os 
 
 #I am using the Lancaster method of stemming words, which is the process of finding the root of the word 
 stemmer = LancasterStemmer()
@@ -87,18 +88,22 @@ def TrainModel():
 
     #Brings the data into the system for processing 
     net = tflearn.input_data(shape=[None, len(training[0])])
-    #Creates 3 more layers each with 8 "neurons"
-    net = tflearn.fully_connected(net, 8)
-    net = tflearn.fully_connected(net, 8)
-    net = tflearn.fully_connected(net, 8)
+    #Creates 2 more layers each with 10 "neurons"
+    net = tflearn.fully_connected(net, 10)
+    net = tflearn.fully_connected(net, 10)
     #This creates the output layer after data is processed by the previous layers 
     net = tflearn.fully_connected(net, len(output[0]), activation='softmax')
     #This uses regressions to predict the tag "or the numerical value of the tag" by using previous data 
     net = tflearn.regression(net)
 
     # This now trains the model using DNN "Deep Neural Network" and saves the model to a file
+    
+    #However, I already trained the model, so it wont train it again. But if you want to see it train the model, just change the if statement file name. 
     model = tflearn.DNN(net)
-    model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
-    model.save('model.tflearn')
+    if os.path.exists('model.tflearn' + '.meta'):
+      model.load('model.tflearn')
+    else:
+      model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
+      model.save('model.tflearn')
 
     return model, allWords, tags, data 

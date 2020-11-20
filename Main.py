@@ -24,7 +24,7 @@ def bagOfWords(userInput, allWords):
 def main():
     #Gets all the needed data from the training model functoin 
     model, allWords, tags, data = TrainModel()
-    print("Welcome to the tech shop! My name is Eliza! Starting asking questions to talk to me (type quit to stop)!")
+    print("\nWelcome to the tech shop! My name is Eliza! Start asking questions to talk to me (type quit to stop)!")
     name = input("What is your name? ")
     print(f'Eliza: Hello {name}, Nice to meet you! How can I help you today?')
   
